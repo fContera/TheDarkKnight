@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Passion+One:700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:500');
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+
+
+
 
 .sprite{
 	visibility: hidden ;
@@ -9,13 +15,16 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 	}
 
 body{
-	font-family: 'Passion One', cursive;
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.2rem ;
 	line-height: 1.5 ;
 	background-color: black ; 
 	color: white ;
+
 	}
 
 h1{
+	font-family: 'Passion One', cursive;
 	font-size:1.8rem ;
 	letter-spacing: 1px ;
 	line-height: normal ;
@@ -23,7 +32,8 @@ h1{
 	}
 
 section > span {
-	font-size:5rem ;
+	font-family: 'Passion One', cursive;
+	font-size: 4.5rem ;
 	line-height: normal ;
 	text-transform: uppercase ;
 	}
@@ -37,20 +47,21 @@ section > span {
 	}
 
 .btn{
-	display: block ;
+	display: inline-block ;
 	height: 2rem;
+	margin-top: 1.5em ;
 	line-height: 2rem;
-	position: absolute ;
-	top: 80% ;
-	left: 10% ;
+	padding: 0 3em ;
 	font-size: 2rem ;
 	text-transform: uppercase ;
-	color: white ;
+	color: black ;
+	background-color: white ;
 	text-decoration: none ;
-	transition: all 1s ;
+	border: double 3px black ;
+	transition: all .4s ;
 	}
 	.btn:hover{
-		transform: scale(1.4);
+		transform: scale(1.1);
 		}
 
 .flexibleMedia{
@@ -61,27 +72,31 @@ section > span {
 
 .mainHeader .mainNav{
 	width: 100% ;
-	height: 15% ;
+	height: 100px ;
 	position: fixed ;
-	top: -100% ;
+	top: 0 ;
 	left: 0 ;
-	//background-color: crimson ;
+	background-color: black ;
 	}
 
-.mainHeader .burger{
+.mainNav .burger{
 	width: 30px ;
 	height: 30px ;
-	position: fixed ;
-	top: 3% ;
-	right: 5% ;
+	position: absolute ;
+	top: 50% ;
+	right: 30px ;
+	transform: translateY(-50%);
+	fill: white ;
 	}
 
 .mainHeader ul{
-	width: 50vw ;
+	width: 100vw ;
 	height: 100vh ;
+	box-sizing: border-box;
 	position: fixed ;
 	top: 0 ;
-	right: -120% ;
+	right: -110% ;
+	padding: 200px 42px ;
 	border-left:  1px solid white;
 	z-index: -1;
 	transition: all .4s ;
@@ -90,21 +105,24 @@ section > span {
 .mainHeader .desplegar{
 	right: 0 ;
 	}
-
+.mainHeader a{
+	
+	font-size: 2rem ;
+	letter-spacing: 1px ;
+	color: white ;
+	text-decoration: none ;
+	}
 /* INDEX */
 
 .hero{
 	height: 100vh ;
 	position: relative ;
 	}
-body::-webkit-scrollbar{
-	width: 0px 
-}
 
 .logoIntro{
 	display: block ;
-	width: 90% ;
-	height: 90% ;
+	width: 450px ;
+	height: 450px ;
 	position: fixed ;
 	top: 50% ;
 	left: 50% ;
@@ -118,7 +136,7 @@ body::-webkit-scrollbar{
 	stroke-dasharray: 1800 ;
 	opacity: 10 ;
 	transition: fill 1s ;
-	animation: animate 6s cubic-bezier(0,0.23,1,.1);
+	animation: animate 4s cubic-bezier(0,0.23,1,.1);
   	}
 
 @keyframes animate{
@@ -127,7 +145,7 @@ body::-webkit-scrollbar{
     	fill: none ;
     	stroke-dashoffset: 1800;
   		}
-    30%{
+    20%{
     	opacity: 10 ;
     	fill: none ;
     	stroke-dashoffset: 1800;
@@ -142,19 +160,20 @@ body::-webkit-scrollbar{
 	width: 80px ;
 	height: 80px ;
 	position: fixed;
-	top: 1% ;
-	left: 3% ;
+	top: 3% ;
+	left: 5% ;
 	transform: translate(0%, 0%);
 	animation: none ;
 	}
 
 .hero h1:nth-of-type(1){
 	position: absolute ;
-	top: 37% ;
+	top: 38% ;
 	left: 50% ;
 	transform: translate(-50%,-50%) scale(1);
-	transition: all 2s ;
-	animation: mvtTrilogy 2s 4s ease-in-out backwards
+	font-size: 1.6rem;
+	//transition: all 2s ;
+	animation: mvtTrilogy .8s ease-in-out backwards
 	}
 
 @keyframes mvtTrilogy{
@@ -165,25 +184,26 @@ body::-webkit-scrollbar{
 
 .hero h1:nth-of-type(2){
 	position: absolute ;
-	top: 47% ;
+	top: 48% ;
 	left: 50% ;
 	transform: translate(-50%,-50%) scale(1);
+	
 	transition: all 1s ;
-	animation: mvtDark 2s 4s ease-in-out backwards
+	animation: mvtDark .8s ease-in-out backwards
 	}
 
 @keyframes mvtDark{
 		0%{
-		transform: translate(-50%,-50%) scale(0);
+		opacity: 0
 		}
 	}
 
 .hero .nolan{
 	display: block ;
-	width:65% ;
-	height: 55% ;
+	width:50% ;
+	height: 45% ;
 	position: absolute;
-	top: 64% ;
+	top: 62% ;
 	left: 50% ;
 	transform: translate(-50%,-50%) scale(1)
 	}
@@ -193,7 +213,7 @@ body::-webkit-scrollbar{
 	stroke: #fff;
 	stroke-dasharray: 1800 ;
 	opacity: 10 ;
-	animation: animate 8s 4s cubic-bezier(0,0.23,1,.1) backwards;
+	animation: animate 7s .5s cubic-bezier(0,0.23,1,.1) backwards;
   	}
 @keyframes animate{
 	0%{
@@ -219,15 +239,15 @@ body::-webkit-scrollbar{
 	position: absolute;
 	top: 85% ;
 	left: 50% ;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%) rotate(90deg);
 	animation: mvtArrow 1s ease-in-out infinite alternate,
-			   mostrarArrow 1s 8s backwards;
+			   mostrarArrow .4s 3s backwards;
 	}
 
 @keyframes mvtArrow{
 	100%{
 		 top: 87%;
-		 transform: translate(-50%,-50%);
+		 transform: translate(-50%,-50%) rotate(90deg);
 		}
 
 	}
@@ -237,9 +257,41 @@ body::-webkit-scrollbar{
 		}
 	}
 
+ .hero div{
+  display: none ;
+  width: 220px ;
+  height: 220px ;
+  position: absolute ;
+  top: 30% ;
+  left: 50% ;
+  transform: translate(-50%, -50%);
+  background-image: url("ui-img/joker.gif");
+  background-size: contain ;
+  opacity: 0 ;
+  transition: all 1s 1s
+  }
+			
+.hero .spotlight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50% ;
+    left: 50% ;
+    background-image: radial-gradient(
+        circle,
+        transparent 40px,
+        rgba(0, 0, 0, 1) 110px
+    );
+  z-index: 1
+}			
+
 .batmanBegins{
-	height: 100vh;
+	width: 100% ;
+	//height: 100vh;
 	position: relative;
+	padding: 32px ;
+	//display: none ;
+	box-sizing: border-box ;
 	}
 
 .Reveal_row {
@@ -247,6 +299,7 @@ body::-webkit-scrollbar{
     overflow: hidden;
     vertical-align: top;
     text-transform: uppercase;
+    //background-color: yellow ;
 	}
 
 .Reveal_item {
@@ -260,53 +313,94 @@ body::-webkit-scrollbar{
     z-index: 1;
 }
 
+.Reveal_item + .Reveal_item{
+	margin-left: -10px ;
+	}
+
+p .Reveal_row {
+    text-transform: none ;
+    //background-color: yellow ;
+	}
+
+
+p .Reveal_item + .Reveal_item{
+	margin-left: 0px ;
+	}
+
 .Reveal_animate {
     transform: translate(0) rotate(0);
     opacity: 1;
 	}
-
+section p{
+	width: 50% ;
+	margin-top: 1.5em ;
+	//background-color: yellow ;
+	}
+section .Reveal_row + p{
+	margin-top: 2em ;
+	}
 .batmanBegins .batman{
-	width: 120% ;
-	height: 50% ;
+	width: 100px ;
+	height: 400px ;
 	position: absolute ;
-	top: 20% ; 
-	left: 0 ;
-	background-image: url("ui-img/batman-begins.jpg");
+	top: 80px ; 
+	right: 45px ;
+	background-image: url("ui-img/batmanBegins.png");
 	background-size: contain ;
 	background-repeat: no-repeat;
 	//border: 1px solid white ;
-	//background-color: red
+	//background-color: red;
+	z-index: 2
 	}
+.batmanBegins .btn{
+
+	}
+
+
 
 .darkNight{
-	height: 100vh;
+	width: 100% ;
+	//height: 100vh;
 	position: relative;
+	padding: 32px ;
+	margin-top: 130px ;
+	margin-left: 160px ;
+	box-sizing: border-box ;
+	//display: none ;
 	}
 
+.darkNight p{
+	width: 60% ;
+}
 .darkNight .joker{
-	width: 120% ;
-	height: 50% ;
+	width: 300px ;
+	height: 300px ;
 	position: absolute ;
-	top: 40% ; 
-	left: 30% ;
-	background-image: url("ui-img/theDarkNight.jpg");
+	top: 200px ; 
+	left: -26% ;
+	background-image: url("ui-img/twoFace.png");
 	background-size: contain ;
 	background-repeat: no-repeat;
 	//border: 1px solid white ;
 	//background-color: red
 	}
+
 .darkNightRises{
-	height: 100vh;
+	width: 100% ;
+	//height: 100vh;
 	position: relative;
+	padding: 32px ;
+	margin-top: 130px ;
+	//display: none ;
 	}
 
 .darkNightRises .bane{
-	width: 120% ;
-	height: 50% ;
+	width: 320px ;
+	height: 320px ;
 	position: absolute ;
-	top: 40% ; 
-	left: 30% ;
-	background-image: url("ui-img/bane.jpg");
+	top: 135px ; 
+	left: 250px ;
+	background-image: url("ui-img/bane.png");
 	background-size: contain ;
 	background-repeat: no-repeat;
 	//border: 1px solid white ;
