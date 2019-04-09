@@ -48,7 +48,7 @@ function flyBat(){
 }
 
 
-$(window).on("scroll", scrolleando);
+
 menuBurguer.on("click", desplegarMenu);
 
 console.log(menuBurguer);
@@ -67,25 +67,66 @@ function desplegarMenu(){
 
 }
 
-
+$(window).on("scroll", scrolleando);
 var spans = $(".Reveal_row .Reveal_item").toArray();
+var spansBegins = $(".batmanBegins .Reveal_row .Reveal_item").toArray();
 var primeraVez = true ;
-function scrolleando(){
+/*function scrolleando(){
 	if($(window).scrollTop() > 0 && primeraVez){
 		scrollearHero();
 		primeraVez = false ;
+		if($(window).scrollTop()*1.9 > $(spans[i]).offset().top){
+			$(spans[i]).addClass("Reveal_animate")
+		}
 	}
 	var time = 20 ;
 	for ( var i = 0; i < spans.length; i++ ) {
-		if($(window).scrollTop()*1.9 > $(spans[i]).offset().top){
+		if($(window).scrollTop()*1.7 > $(spans[i]).offset().top){
 				$(spans[i]).addClass("Reveal_animate")
 		}
     	
     }
-}
+}*/
 
+var spansBegins = $(".batmanBegins .Reveal_row .Reveal_item"),
+	filas = $(".Reveal_row").toArray(), 
+	mitadAlturaVentana =  $(window).height()/2;
+function scrolleando(){
+	if($(window).scrollTop() > 0 && primeraVez){
+		scrollearHero();
+		primeraVez = false ;
+		var num = $(".batmanBegins .Reveal_row .Reveal_item").length;
+		//console.log(num);
+		var time = 20 ;
+
+		for (var i = 0; i < num; i++) {
+			window.setTimeout("efects("+i+")",time)
+			time += 20 ;
+		}
+		
+	}
+	else{
+		for(i = 0 ; i< filas.length; i++){
+			//console.log("fila que entra: " + $(filas[i]).children().text());
+			if($(window).scrollTop() + mitadAlturaVentana > $(filas[i]).offset().top){	
+				//console.log("fila que entran al if: " + $(filas[i]).children().text());
+				var time = 5 ;
+				//$(filas[fila]).children().length ;
+				var numhijos = $(filas[i]).children().length;
+				for (var j = 0; j < numhijos; j++) {
+					window.setTimeout("efects("+j+","+i+")",time)
+					time += 5 ;
+				}
+
+			}
+		}
+	}
+}
 	
-	
+function efects(i, row){
+	//console.log(i + " " +row);
+	$(filas[row]).children().eq(i).addClass("Reveal_animate")
+}	
 
 /*function scrolleando(){
 	var prueba = $(window).scrollTop() + 150 ;
