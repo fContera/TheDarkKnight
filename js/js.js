@@ -92,17 +92,25 @@ var spansBegins = $(".batmanBegins .Reveal_row .Reveal_item"),
 	filas = $(".Reveal_row").toArray(), 
 	mitadAlturaVentana =  $(window).height()/2;
 function scrolleando(){
+	console.log("entra funcion scrolleando");
 	if($(window).scrollTop() > 0 && primeraVez){
-		scrollearHero();
+		console.log("entra la primera vez");
+		$("#logo path").css("fill","white");
+		aLogoPage.addClass("aLogoPage");
+		window.setTimeout("efects()",900);
+		$(".hero h1:nth-of-type(2)").css("top", "57%");
+		$(".hero h1:nth-of-type(1)").css("top", "52%");
+		/*scrollearHero();*/
 		primeraVez = false ;
-		var num = $(".batmanBegins .Reveal_row .Reveal_item").length;
+
+		/*var num = $(".batmanBegins .Reveal_row .Reveal_item").length;
 		//console.log(num);
 		var time = 20 ;
 
 		for (var i = 0; i < num; i++) {
 			window.setTimeout("efects("+i+")",time)
 			time += 20 ;
-		}
+		}*/
 		
 	}
 	else{
