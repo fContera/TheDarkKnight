@@ -19,7 +19,7 @@ function scrollearHero(){
 	$(".darkNight").css("display", "block");
 	$(".darkNightRises").css("display", "block");
 	aLogoPage.addClass("aLogoPage");
-	var altBegins = $(".batmanBegins").offset().top - $(".mainHeader .mainNav").height()-10;
+	var altBegins = $(".batmanBegins").offset().top - $(".mainHeader .mainNav").height()-50;
 	$("html,body").animate({scrollTop:altBegins},1500);
 	$(".hero h1:nth-of-type(2)").css("top", "57%");
 	$(".hero h1:nth-of-type(1)").css("top", "52%");
@@ -95,11 +95,15 @@ function scrolleando(){
 	console.log("entra funcion scrolleando");
 	if($(window).scrollTop() > 0 && primeraVez){
 		console.log("entra la primera vez");
-		$("#logo path").css("fill","white");
-		aLogoPage.addClass("aLogoPage");
-		window.setTimeout("efects()",900);
-		$(".hero h1:nth-of-type(2)").css("top", "57%");
-		$(".hero h1:nth-of-type(1)").css("top", "52%");
+		$(".symbolBatman").css("display","none");
+		$(".mainHeader .mainNav").css("top","0%");
+		//aLogoPage.addClass("aLogoPage");
+		//window.setTimeout("efects()",900);
+		
+		$(".hero h1:nth-of-type(1)").css("top", "80%");
+		$(".hero h1:nth-of-type(2)").css("top", "88%");
+		$(".hero .nolan").css("top", "96%");
+		$(".arrow").css("bottom", "-40%");
 		/*scrollearHero();*/
 		primeraVez = false ;
 

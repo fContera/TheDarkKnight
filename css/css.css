@@ -3,11 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:500');
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
-
-
-
-
-
 .sprite{
 	visibility: hidden ;
 	position: absolute;
@@ -20,18 +15,17 @@ body{
 	line-height: 1.5 ;
 	background-color: black ; 
 	color: white ;
-
 	}
 
 h1{
 	font-family: 'Passion One', cursive;
-	font-size:1.8rem ;
+	font-size:1.9rem ;
 	letter-spacing: 1px ;
 	line-height: normal ;
 	text-transform: uppercase ;
 	}
 
-section > span {
+.wrapperSection > span {
 	font-family: 'Passion One', cursive;
 	font-size: 4.5rem ;
 	line-height: normal ;
@@ -46,23 +40,84 @@ section > span {
 	left:0 ;
 	}
 
-.btn{
-	display: inline-block ;
-	height: 2rem;
-	margin-top: 1.5em ;
-	line-height: 2rem;
-	padding: 0 3em ;
-	font-size: 2rem ;
-	text-transform: uppercase ;
-	color: black ;
-	background-color: white ;
-	text-decoration: none ;
-	border: double 3px black ;
-	transition: all .4s ;
-	}
-	.btn:hover{
-		transform: scale(1.1);
-		}
+.bttn {
+	margin-top: 2.5em ;
+	box-sizing: border-box;
+    color:white;
+  text-decoration:none;
+  transition:0.4s ease all;
+  font-size:18px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  display:inline-block;
+  text-align:center;
+  width:270px;
+  font-weight:bold;
+  padding:14px 0px;
+  border:3px solid white;
+  border-radius:2px;
+  position:relative;
+  //background-color:#EEA637; 
+  box-shadow: 0 2px 10px rgba(255,255,255,0.16), 0 3px 6px rgba(255,255,255,0.1);
+  }
+  .bttn:hover {
+    color:black;
+    box-sizing: border-box;
+    }
+  .bttn:focus {
+  	transition: 0 ;
+    background-color: #EEA637;
+    }
+  .bttn::before {
+    width:0% ;
+    height: 100% ;
+    transition:0.4s all ease;
+    position:absolute;
+    top:0;
+    left:50%;
+    //right: 50%;
+    opacity:0;
+    content:'';
+    background-color:white;
+    z-index:-2;
+  }
+   .bttn:hover::before {
+      transition:0.4s all ease;
+      left:50%;
+      width: 50% ;
+      //right:0;
+      opacity:1;
+    }
+    .bttn:focus::before {
+     height: 0 ;
+     opacity:0;
+    }
+  
+    .bttn::after {
+    width:0% ;
+    height: 100% ;
+    transition:0.4s all ease;
+    position:absolute;
+    top:0;
+    //left:50%;
+    right: 50%;
+    opacity:0;
+    content:'';
+    background-color: white;
+    z-index:-2;
+  }
+   .bttn:hover::after {
+      transition:0.4s all ease;
+      //left:0;
+      right:50%;
+      width: 50% ;
+      opacity:1;
+
+    }
+   .bttn:focus::after {
+     opacity:0;
+    }
+  
 
 .flexibleMedia{
 	display: block ;
@@ -74,14 +129,26 @@ section > span {
 	width: 100% ;
 	height: 100px ;
 	position: fixed ;
-	top: 0 ;
+	top: -100% ;
 	left: 0 ;
 	background-color: black ;
+	//border-bottom: solid 1px white ;
+	z-index: 999;
+	transition: all .6s
+	}
+
+.mainNav .logoPage{
+	width: 50px ;
+	height: 50px ;
+	position: absolute ;
+	top: 50% ;
+	left: 30px ;
+	transform: translateY(-50%);
 	}
 
 .mainNav .burger{
-	width: 30px ;
-	height: 30px ;
+	width: 35px ;
+	height: 35px ;
 	position: absolute ;
 	top: 50% ;
 	right: 30px ;
@@ -102,16 +169,18 @@ section > span {
 	transition: all .4s ;
 	background-color: crimson  
 	}
+
 .mainHeader .desplegar{
 	right: 0 ;
 	}
+
 .mainHeader a{
-	
 	font-size: 2rem ;
 	letter-spacing: 1px ;
 	color: white ;
 	text-decoration: none ;
 	}
+
 /* INDEX */
 
 .hero{
@@ -119,18 +188,29 @@ section > span {
 	position: relative ;
 	}
 
-.logoIntro{
+.hero .wrapperHero{
+	width: 100% ;
+	height: 400px ;
+	position: absolute ;
+	top: 40% ;
+	left: 0 ;
+	transform: translateY(-50%);
+	//background-color: yellow ;
+	z-index: 99
+	}
+
+.symbolBatman{
 	display: block ;
 	width: 450px ;
 	height: 450px ;
-	position: fixed ;
+	position: absolute; 
 	top: 50% ;
 	left: 50% ;
-	transform: translate(-50%,-50%) scale(1);
+	transform: translate(-50%,-50%);
 	transition: all 1s ;
-}
+	}
 
-#logo path{
+#symbolBatman path{
 	//fill: white ;
 	stroke: #fff;
 	stroke-dasharray: 1800 ;
@@ -156,24 +236,17 @@ section > span {
   		}
 	}
 
-.aLogoPage{
-	width: 80px ;
-	height: 80px ;
-	position: fixed;
-	top: 3% ;
-	left: 5% ;
-	transform: translate(0%, 0%);
-	animation: none ;
-	}
+
 
 .hero h1:nth-of-type(1){
 	position: absolute ;
-	top: 38% ;
+	top: 25% ;
 	left: 50% ;
 	transform: translate(-50%,-50%) scale(1);
 	font-size: 1.6rem;
-	//transition: all 2s ;
-	animation: mvtTrilogy .8s ease-in-out backwards
+	transition: all .6s ;
+	//background-color: orange ;
+	animation: mvtTrilogy .6s ease-in-out backwards
 	}
 
 @keyframes mvtTrilogy{
@@ -184,12 +257,12 @@ section > span {
 
 .hero h1:nth-of-type(2){
 	position: absolute ;
-	top: 48% ;
+	top: 46% ;
 	left: 50% ;
 	transform: translate(-50%,-50%) scale(1);
 	
 	transition: all 1s ;
-	animation: mvtDark .8s ease-in-out backwards
+	animation: mvtDark .6s ease-in-out backwards
 	}
 
 @keyframes mvtDark{
@@ -200,12 +273,14 @@ section > span {
 
 .hero .nolan{
 	display: block ;
-	width:50% ;
-	height: 45% ;
+	width: 230px ;
+	height: 45px ;
 	position: absolute;
-	top: 62% ;
+	top: 75% ;
 	left: 50% ;
-	transform: translate(-50%,-50%) scale(1)
+	transition: top .6s ;
+	transform: translate(-50%,-50%) scale(1);
+	//background-color: orange
 	}
 
 #nolan path{
@@ -213,8 +288,9 @@ section > span {
 	stroke: #fff;
 	stroke-dasharray: 1800 ;
 	opacity: 10 ;
-	animation: animate 7s .5s cubic-bezier(0,0.23,1,.1) backwards;
+	animation: animate 7s .8s cubic-bezier(0,0.23,1,.1) backwards;
   	}
+
 @keyframes animate{
 	0%{
     	opacity: 0 ;
@@ -232,21 +308,22 @@ section > span {
     	
   		}
 	}
+
 .arrow{
 	display: block ;
 	width: 50px ;
 	height: 50px ;
 	position: absolute;
-	top: 85% ;
+	bottom: -20% ;
 	left: 50% ;
 	transform: translate(-50%,-50%) rotate(90deg);
 	animation: mvtArrow 1s ease-in-out infinite alternate,
-			   mostrarArrow .4s 3s backwards;
+			   mostrarArrow .6s 3s backwards;
 	}
 
 @keyframes mvtArrow{
 	100%{
-		 top: 87%;
+		 bottom: -15%;
 		 transform: translate(-50%,-50%) rotate(90deg);
 		}
 
@@ -256,44 +333,24 @@ section > span {
 			opacity:0;
 		}
 	}
-
- .hero div{
-  display: none ;
-  width: 220px ;
-  height: 220px ;
-  position: absolute ;
-  top: 30% ;
-  left: 50% ;
-  transform: translate(-50%, -50%);
-  background-image: url("ui-img/joker.gif");
-  background-size: contain ;
-  opacity: 0 ;
-  transition: all 1s 1s
-  }
-			
-.hero .spotlight {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50% ;
-    left: 50% ;
-    background-image: radial-gradient(
-        circle,
-        transparent 40px,
-        rgba(0, 0, 0, 1) 110px
-    );
-  z-index: 1
-}			
+		
 
 .batmanBegins{
 	width: 100% ;
 	//height: 100vh;
 	position: relative;
-	padding: 32px ;
+	padding: 0 32px ;
 	//display: none ;
 	box-sizing: border-box ;
+	transition: all .4s ;
+	//background-color: yellow
 	}
+.batmanBegins .wrapperSection{
+	height: 100% ;
+	//width: 500px;
 
+	//background-color: red
+	}
 .Reveal_row {
     display: block;
     overflow: hidden;
@@ -311,7 +368,7 @@ section > span {
 
     position: relative;
     z-index: 1;
-}
+	}
 
 .Reveal_item + .Reveal_item{
 	margin-left: -10px ;
@@ -331,11 +388,13 @@ p .Reveal_item + .Reveal_item{
     transform: translate(0) rotate(0);
     opacity: 1;
 	}
+
 section p{
 	width: 50% ;
 	margin-top: 1.5em ;
 	//background-color: yellow ;
 	}
+
 section .Reveal_row + p{
 	margin-top: 2em ;
 	}
@@ -348,8 +407,37 @@ section .Reveal_row + p{
 	background-image: url("ui-img/batmanBegins.png");
 	background-size: contain ;
 	background-repeat: no-repeat;
+	transition: all .2s ;
 	//border: 1px solid white ;
 	//background-color: red;
+	z-index: 2
+	}
+.batmanBegins .agente{
+	width: 0px ;
+	height: 300px ;
+	position: absolute ;
+	top: 150px ; 
+	right: 125px ;
+	background-image: url("ui-img/agente.png");
+	background-size: contain ;
+	background-repeat: no-repeat;
+	transition: all .2s ;
+	//border: 1px solid white ;
+	//background-color: green;
+	z-index: 2
+	}
+.batmanBegins .espantaPajaros{
+	width: 130px ;
+	height: 300px ;
+	position: absolute ;
+	top: 220px ; 
+	right: 125px ;
+	background-image: url("ui-img/espanta-pajaros.png");
+	background-size: contain ;
+	background-repeat: no-repeat;
+	transition: all .2s ;
+	//border: 1px solid white ;
+	//background-color: green;
 	z-index: 2
 	}
 .batmanBegins .btn{
@@ -442,82 +530,97 @@ section .Reveal_row + p{
 	stroke: #FFFFFF ;
 	}
 
+
 .sections ul{
-	width: 100% ;
-	height: 100vh ;
+	width: calc(100% - 60px) ;
+	//height: 440px ;
 	box-sizing: border-box ;
+	position: relative ;
+	margin: 0 auto ;
 	display: flex ;
 	flex-wrap: wrap ;
+	justify-content: center ;
+	align-items: center ;
 	text-transform: uppercase;
+	font-family: 'Passion One', cursive;
 	font-size: 2rem ;
-	border: solid 1px red;
+	//border: solid 1px red;
+	//background-color: blue
 	}
 .sections li{
-	width: 50% ;
-	height: 50% ;
-	position: relative ;
+	width: 100% ;
+	//height: 220px ;
+	box-sizing: border-box;
 	display: flex ;
 	justify-content: center ;
 	align-items: center ;
 	cursor: pointer;
+	font-size: 3rem ;
+	border-bottom: solid 3px white;
+	transition: all .4s ;
+	//background-color: orange
 	}
-	.sections li span{
-		content: "" ;
-		width: 200px ;
-		height: 200px ;
-		position: absolute ;
-		bottom: -5% ;
-		left: 50% ;
-		transform: translateX(-50%) scale(1);
-		background-image: url("ui-img/batClose.gif");
-		background-size: contain ;
-		background-repeat: no-repeat ;
-		animation: none ;
-		}
-	.sections li span:hover{
-		background-image: url("ui-img/but.gif");
-		}
+	.sections li:hover{
+		background-color: white ;
+		color: black ;
 
-@keyframes flyBat{
-	30%{
-		bottom: -20%;
-		left: 50% ;
-		transform: translateX(-50%) scale(1) rotate(90deg);
 		}
-	50%{
-		transform: translateX(-50%) scale(1) rotate(180deg);
-		}
-
-	99%{
-		bottom: -30% ;
-		left: -100% ;
-		transform: translateX(-50%) scale(1.5);
-		opacity: 1
-		}
-	100%{
-		opacity: 0
-		}
+.sections li:nth-child(2),.sections li:nth-child(4){
+	border-left: 0 ;
 	}
-.personajes{
-	width: 100% ;
-	height: 100vh ;
-	position: absolute ;
-	top: 100vw ;
-	right: -120% ;
+.sections li:nth-child(3),.sections li:nth-child(4){
+	border-top: 0 ;
+	}
+.ficha{
+	width: 440px ;
+	margin: 150px  auto  0 auto;
 	display: flex ;
 	flex-wrap: wrap ;
+	justify-content: center ;
 	background-color: black ; 
 	transition: all 4s ease-out;
 	}
-.entrar{
-	right: 0 ;
+
+.ficha .titleFicha{
+	font-size: 5rem ;
+	//background-color: orange ;
+	}
+.ficha ul{
+	width: 440px ;
 
 	}
+.ficha ul li{
+	width: 100% ;
+	}
+.ficha ul li span {
+	display: inline-block ;
+	//text-align: center ;
+	}
+
+.ficha li span:nth-child(1){
+	text-transform: uppercase ;
+	color : #EEA637;
+	}
+.personajes{
+	width: 440px ;
+	margin: 150px  auto  0 auto;
+	display: flex ;
+	flex-wrap: wrap ;
+	justify-content: center ;
+	background-color: black ; 
+	transition: all 4s ease-out;
+	}
+
+.personajes .titleSection{
+	font-size: 5rem ;
+	//background-color: orange ;
+	}
+
 .personajes article{
-	width: 75% ;
-	height: 25% ;
+	width: 300px ;
+	height: 300px  ;
 	box-sizing: border-box ;
-	border: solid 1px white ;
+	border: solid 5px white ;
 	position: relative ;
 	margin: 20px ;
 	}
@@ -528,15 +631,26 @@ section .Reveal_row + p{
 	width: 100% ;
 	height: 100% 
 	}
+
 .personajes article h1{
+	width: 90% ;
 	position: absolute;
 	left : 50% ;
 	transform: translate(-50%, 50%);
 	bottom: 0 ;
-	padding: 0 1em ;
+	padding: 0.3em 0em ;
 	display: inline-block ;
 	background-color: white;
 	color: black ;
+	text-align: center ;
+	}
+
+.music{}
+
+.music .wrapperMusic{
+	width: 300px ;
+	height: 300px  ;
+	border: solid 5px white ;
 	}
 
 footer{
@@ -558,6 +672,7 @@ footer li{
 	width: 40px ;
 	height: 40px ;
 	margin: 0 20px ;
+	border-radius: 100% ;
 	position: relative ;
 	
 	}
@@ -584,3 +699,39 @@ footer span{
 	
 	text-align:  center
 }
+
+@media(min-width: 530px){
+	.batmanBegins .batman{
+		top: 0px ; 
+		right: 45px ;
+	}
+	.batmanBegins .agente{
+	width: 130px ;
+	}
+}
+
+@media(min-width: 660px){
+
+	body{
+	font-size: 1.6rem ;
+	}
+	.wrapperSection > span {
+		font-size: 5.5rem ;
+	}
+	.mainNav .logoPage{
+	width: 60px ;
+	height: 60px ;
+	left: 40px ;
+	}
+
+	.mainNav .burger{
+		width: 45px ;
+		height: 45px ;
+		right: 40px ;
+		}
+
+	.batmanBegins{
+		padding: 0 42px ;
+		}
+
+} 
